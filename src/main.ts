@@ -11,6 +11,6 @@ const httpServer = new ExpressAdapter();
 const router = new Router(httpServer, transactionRepository);
 
 router.init();
-httpServer.listen(3000, () => {
-	console.log('Listening on http://localhost:3000');
+httpServer.listen(3333, () => {
+	console.log('Listening on http://localhost:3333');
 });
