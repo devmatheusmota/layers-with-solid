@@ -5,8 +5,8 @@ import TransactionDatabaseRepository from './infra/repository/TransactionDatabas
 import TransactionMemoryRepository from './infra/repository/TransactionMemoryRepository';
 
 const connection = new PostgreSQLAdapter();
-// const transactionRepository = new TransactionDatabaseRepository(connection); // Com banco de dados
-const transactionRepository = new TransactionMemoryRepository(); // Com banco de dados em memoria
+const transactionRepository = new TransactionDatabaseRepository(connection); // Com banco de dados
+// const transactionRepository = new TransactionMemoryRepository(); // Com banco de dados em memoria
 const httpServer = new ExpressAdapter();
 const router = new Router(httpServer, transactionRepository);
 
